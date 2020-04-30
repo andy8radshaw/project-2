@@ -1,0 +1,73 @@
+@import '~bulma/bulma.sass';
+
+
+.Home {
+  background: rgb(255,101,91);
+  background: linear-gradient(35deg, rgba(255,101,91,1) 0%, rgba(255,88,100,1) 49%, rgba(253,41,123,1) 100%);
+      div div p {
+        font-size: 40px;
+        font-weight: 500;
+      }
+}
+
+.Title {
+  margin: auto 0;
+  font-size: 200%;
+}
+
+.Burger-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: auto 0;
+  margin-left: 95%;
+  margin-right: 5%;
+  border: 1px solid #808080;
+  border-radius: 5px;
+  .Burger {
+    width: 25px;
+    height: 1px;
+    background-color: #808080;
+    margin: 4px 5px;
+  }
+  :first-child {
+    margin-top: 6px;
+  }
+  :last-child {
+    margin-bottom: 6px;
+  }
+}
+
+.round-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10vh;
+  height: 10vh;
+  padding: 0.5vh;
+  background-color: white;
+  border: 1vh solid grey;
+  border-radius: 100%;
+  box-shadow: 0 2px black;
+  cursor: pointer;
+}
+
+.DinderRandom {
+  .columns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .buttons {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+}
+
+.DinderMatch {
+  .top-section {
+    display: flex;
+  }
+}
