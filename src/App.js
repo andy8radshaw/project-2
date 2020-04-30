@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Home from './components/common/Home'
 import DinderRandom from './components/dinder/DinderRandom'
 import DinderMatch from './components/dinder/DinderMatch'
+// import Modal from './components/common/Modal'
 
 const App = () => {
   return (

@@ -5,7 +5,10 @@ import { getRandomMeal } from '../../lib/api'
 import Navbar from '../common/Navbar'
 
 class DinderRandom extends React.Component {
-  state = { meals: null }
+  state = { 
+    meals: null,
+    activeModal: false
+  }
 
   getData = async () => {
     try {
@@ -20,12 +23,15 @@ class DinderRandom extends React.Component {
     this.getData()
   }
 
+  handleToggle = () => {
+    this.setState({ activeModal: !this.state.activeModal })
+  }
 
 
   render() {
     if (!this.state.meals) return null
-    const { idMeal, strMealThumb, strMeal, strArea  }  = this.state.meals.meals[0]
-    
+    const { idMeal, strMealThumb, strMeal, strArea } = this.state.meals.meals[0]
+
     return (
       <>
         <Navbar />
@@ -33,9 +39,9 @@ class DinderRandom extends React.Component {
           <div className="container">
             <div className="columns">
               <div className="column is-half box">
-                <div className="polaroid">  
+                <div className="polaroid">
                   <figure className="image">
-                    <img src={ strMealThumb } alt={strMeal} />
+                    <img src={strMealThumb} alt={strMeal} />
                   </figure>
                   <div className="content">
                     <h1>{strMeal}</h1>
@@ -44,9 +50,9 @@ class DinderRandom extends React.Component {
                 </div>
               </div>
               <div className="buttons">
-                <img className="round-btn" onClick={this.getData} src={require('../../assets/cross3.png')} alt="like button"/>
+                <img className="round-btn" onClick={this.getData} src={require('../../assets/cross3.png')} alt="like button" />
                 <Link to={`/dinder/${idMeal}`}>
-                  <img className="round-btn" src={require('../../assets/heart2.png')} alt="like button"/>
+                  <img className="round-btn" src={require('../../assets/heart2.png')} alt="like button" />
                 </Link>
               </div>
             </div>

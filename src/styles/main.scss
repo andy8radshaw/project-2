@@ -14,7 +14,10 @@
         align-items: center;
         justify-content: center;
         height: 100vh;
+        padding: 10%;
+        
         .start{
+          color: #404040;
           animation: low-glow 1.5s infinite 0s linear;
         }
         @keyframes low-glow {
@@ -50,7 +53,7 @@ margin-top: 12px;
   .Burger-wrap {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     margin: auto 0;
     border: 1px solid #808080;
     border-radius: 6px;

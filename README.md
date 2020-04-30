@@ -37,11 +37,11 @@ axios
 
 ## to do:
 nav bar:
-- logo
-- burger location
+- logo DONE
+- burger location DONE
 
 home:
-- home page start button
+- home page start button 
 
 random:
 - style polaroid

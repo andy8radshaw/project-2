@@ -7,10 +7,9 @@ import Navbar from '../common/Navbar'
 class DinderMatch extends React.Component {
   state = {
     meals: null,
-    ingredientsList: []
+    ingredientsList: [],
+    activeModal: false
   }
-
-
 
   getData = async () => {
     try {
@@ -22,10 +21,7 @@ class DinderMatch extends React.Component {
     }
   }
 
-
-
   // getIngredientsList = () => {
-
   //   this.setState({ ingredientsList })
   // this.state.meals.meals.filter(key => {
   //   if (Object.keys(key).IndexOf(strIngredient) === true) {
