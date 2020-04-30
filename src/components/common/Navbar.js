@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Navbar = () => (
 
-  <Navbar>
+  <div>
     <div className="navbar is-white">
       <div className="container">
         <div className="navbar-brand">
@@ -16,7 +16,7 @@ const Navbar = () => (
         </div>
       </div>
     </div>
-  </Navbar>
+  </div>
 
 )
 
