@@ -11,8 +11,7 @@ class DinderIngredientRandom extends React.Component {
 
   getData = async () => {
     try {
-      const res = await getMealWithIngredient(this.props.ingredient)
-      console.log(res.data.meals[0])
+      
       // this.setState({ meals: res.data })
     } catch (err) {
       console.log(err)
