@@ -1,15 +1,47 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
+
+import { getMealWithIngredient } from '../../lib/api'
+// import DinderIngredientRandom from '../dinder/DinderIngredientRandom'
 
 
 class Navbar extends React.Component {
-  state = { activeModal: false }
+  state = {
+    activeModal: false,
+    ingredient: '',
+    mealArray: []
+  }
 
   handleToggle = () => {
     this.setState({ activeModal: !this.state.activeModal })
   }
 
+  handleChange = event => {
+    const ingredient = { ...this.state.ingredient, ingredient: event.target.value }
+    this.setState({ ingredient })
+  }
+
+  handleSubmit = async event => {
+    event.preventDefault()
+    const ingredient = this.state.ingredient
+    try {
+      const mealArray = await getMealWithIngredient(ingredient)
+      // console.log(mealArray)
+      this.setState({ mealArray })
+      // this.props.history.push('/dinder/ingredient')
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
   render() {
+    // if (this.state.mealArray !== []) {
+    //   return (
+    //     <DinderIngredientRandom />
+    //   )
+    // }
+    console.log(this.state.mealArray)
+
     return (
 
       <>
@@ -19,22 +51,21 @@ class Navbar extends React.Component {
             <div className="box">
               <div>
                 <h1>Instructions:</h1>
-                <p>We will send you a random recipe, you decide if you like it or not! Dislike and we will send you another, like and you will have access to the full recipe!</p>
+                <p>We will send you a random recipe, YOU decide if you like it or not! Dislike and we will send you another, like and you will have access to the full recipe!</p>
               </div>
               <hr />
               <div>
                 <h1>Main Ingredient:</h1>
                 <p>If you have a main ingredient you want to use, or just have something in the fridge you want to use up add it to the form below and we will send you recipes with it included!</p>
-                <hr/>
-                <form>
+                <hr />
+                <form onSubmit={this.handleSubmit}>
                   <div className="field">
                     <div className="control">
                       <input
                         className="input"
                         placeholder="Main Ingredient - (one only!)"
                         name="ingredient"
-                      // onChange={handleChange}
-                      // value={formData.name}
+                        onChange={this.handleChange}
                       />
                     </div>
                   </div>
@@ -43,7 +74,6 @@ class Navbar extends React.Component {
                   </div>
                 </form>
               </div>
-
             </div>
           </div>
         </div>

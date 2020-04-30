@@ -1,18 +1,19 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import { getRandomMeal } from '../../lib/api'
+import { getMealWithIngredient } from '../../lib/api'
 import Navbar from '../common/Navbar'
 
-class DinderRandom extends React.Component {
+class DinderIngredientRandom extends React.Component {
   state = { 
     meals: null
   }
 
   getData = async () => {
     try {
-      const res = await getRandomMeal()
-      this.setState({ meals: res.data })
+      const res = await getMealWithIngredient(this.props.ingredient)
+      console.log(res.data.meals[0])
+      // this.setState({ meals: res.data })
     } catch (err) {
       console.log(err)
     }
@@ -60,4 +61,4 @@ class DinderRandom extends React.Component {
   }
 }
 
-export default DinderRandom
+export default DinderIngredientRandom
