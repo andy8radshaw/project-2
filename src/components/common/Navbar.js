@@ -3,20 +3,19 @@ import { Link } from 'react-router-dom'
 
 const Navbar = () => (
 
-  <div>
-    <div className="navbar is-white">
-      <div className="container">
-        <div className="navbar-brand">
-          <Link to="/" className="navbar-item">Home</Link>
-          <div className="Burger-wrap">
-            <span className="Burger"></span>
-            <span className="Burger"></span>
-            <span className="Burger"></span>
-          </div>
-        </div>
+  <div className="Navbar">
+    <Link to="/" className="">
+      <img className="logo" src={require('../../assets/logo2.png')} alt="logo" />
+    </Link>
+    <div className="navbar-brand">
+      <div className="Burger-wrap">
+        <span className="Burger"></span>
+        <span className="Burger"></span>
+        <span className="Burger"></span>
       </div>
     </div>
   </div>
+
 
 )
 

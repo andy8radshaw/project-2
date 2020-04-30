@@ -8,6 +8,27 @@
         font-size: 40px;
         font-weight: 500;
       }
+      .all-items {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        .start{
+          animation: low-glow 1.5s infinite 0s linear;
+        }
+        @keyframes low-glow {
+          0% {
+            opacity: 1;
+          }
+          50% {
+            opacity: 0;
+          }
+            100% {
+            opacity: 1;
+          }
+        }
+      }
 }
 
 .Title {
@@ -15,28 +36,40 @@
   font-size: 200%;
 }
 
-.Burger-wrap {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin: auto 0;
-  margin-left: 95%;
-  margin-right: 5%;
-  border: 1px solid #808080;
-  border-radius: 5px;
-  .Burger {
-    width: 25px;
-    height: 1px;
-    background-color: #808080;
-    margin: 4px 5px;
+.Navbar {
+display: flex;
+justify-content: space-between;
+height: 100px;
+padding: 0 60px;
+margin-top: 12px;
+  
+  img{
+    height: 80px;
   }
-  :first-child {
-    margin-top: 6px;
-  }
-  :last-child {
-    margin-bottom: 6px;
+  
+  .Burger-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto 0;
+    border: 1px solid #808080;
+    border-radius: 6px;
+    .Burger {
+      width: 25px;
+      height: 1px;
+      background-color: #808080;
+      margin: 4px 5px;
+    }
+    :first-child {
+      margin-top: 6px;
+    }
+    :last-child {
+      margin-bottom: 6px;
+    }
   }
 }
+
+
 
 .round-btn {
   display: flex;
@@ -46,9 +79,9 @@
   height: 10vh;
   padding: 0.5vh;
   background-color: white;
-  border: 1vh solid grey;
+  border: 1vh solid #d8d6d6;
   border-radius: 100%;
-  box-shadow: 0 2px black;
+  box-shadow: 0 2px rgb(138, 137, 137);
   cursor: pointer;
 }
 
@@ -61,7 +94,8 @@
     .buttons {
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: space-evenly;
+      width: 50%;
     }
   }
 }
@@ -69,5 +103,45 @@
 .DinderMatch {
   .top-section {
     display: flex;
+
+    .meal-title {
+      margin: 0 10%;
+    }
+    .meal-ingredients {
+      margin: 0 10%;
+      
+    }
+    .ingredients {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 50%;
+      margin: 0 auto;
+      .buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 800px) {
+ 
+  .DinderMatch {
+    .top-section {
+      flex-direction: column;
+      margin: 50px;
+      .ingredients {
+        
+        width: 100%;
+        .buttons {
+          
+          width: 100%;
+          
+        }
+      }
+    }
   }
 }

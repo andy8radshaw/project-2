@@ -34,3 +34,21 @@ change tab logo include dinder logo
 react-router-dom
 Bulma
 axios
+
+## to do:
+nav bar:
+- logo
+- burger location
+
+home:
+- home page start button
+
+random:
+- style polaroid
+  - font
+  - layered pictures fx
+  - onload, hover and press buttons animation
+  - polaroid swipe animation
+
+match page:
+- styling
