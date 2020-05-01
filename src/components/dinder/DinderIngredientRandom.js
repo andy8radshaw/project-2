@@ -1,29 +1,30 @@
 import React from 'react'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import Navbar from '../common/Navbar'
-import { getMealWithIngredient } from '../../lib/api'
+import { getMealWithIngredient, getMealById } from '../../lib/api'
 
 class DinderIngredientRandom extends React.Component {
   state = {
+    mealToDisplay: null,
     meal: null,
     activeModal1: true,
-    mealsArray: [],
-    usedIndex: []
+    mealsArray: null,
+    gotRandom: false
   }
 
-  getData = async () => {
-    try {
+  // getData = async () => {
+  //   try {
+  //     const res = await getMealById(this.state.meal.idMeal)
+  //     this.setState({ mealToDisplay: res.data })
+  //   } catch (err) {
+  //     console.log(err)
+  //   }
+  // }
 
-      // this.setState({ meals: res.data })
-    } catch (err) {
-      console.log(err)
-    }
-  }
-
-  componentDidMount() {
-    this.getData()
-  }
+  // componentDidMount() {
+  //   this.getData()
+  // }
 
   handleToggle = () => {
     this.setState({ activeModal1: !this.state.activeModal1 })
@@ -36,31 +37,44 @@ class DinderIngredientRandom extends React.Component {
 
   handleSubmit = async event => {
     event.preventDefault()
-    
     const ingredient = this.state.ingredient
     try {
-      const mealArray = await getMealWithIngredient(ingredient)
+      const mealsArray = await getMealWithIngredient(ingredient)
       // console.log(mealArray)
-      this.setState({ mealArray, activeModal1: false })
+      this.setState({ mealsArray, activeModal1: false })
       // this.props.history.push('/dinder/ingredient')
     } catch (err) {
       console.log(err)
     }
   }
 
+  getRandomItem = () => {
+    const mealsArray = { ...this.state.mealsArray.data }
+    // const usedMeals = { ...this.state.usedMeals }
+    const randomNumber = Math.floor(Math.random() * mealsArray.meals.length)
+    console.log(mealsArray.meals[randomNumber])
+
+    this.setState({ meal: mealsArray.meals[randomNumber], gotRandom: true })
+  }
+
+
 
 
 
   render() {
     // if (!this.state.meals) return null
-    console.log(this.state.mealArray)
-    
+
+    if (this.state.mealsArray && !this.state.gotRandom) {
+      this.getRandomItem()
+    }
+
+    // console.log(this.state.meal)
 
     return (
       <>
         <Navbar />
         <div className={`modal ${this.state.activeModal1 ? 'is-active' : ''}`}>
-          <div onClick={this.handleToggle} className="modal-background"></div>
+          <div className="modal-background"></div>
           <div className="modal-content">
             <div className="box">
               <div>
@@ -86,7 +100,29 @@ class DinderIngredientRandom extends React.Component {
             </div>
           </div>
         </div>
-        <h1>test</h1>
+        <section className="DinderRandom is-fullheight-with-navbar section">
+          <div className="container">
+            <div className="columns">
+              <div className="column is-half box">
+                <div className="polaroid">
+                  <figure className="image">
+                    <img src={`${this.state.meal ? this.state.meal.strMealThumb : ''}`} alt='food' />
+                    {/* <img src={strMealThumb} alt={strMeal} /> */}
+                  </figure>
+                  <div className="content">
+                    <h1>{`${this.state.meal ? this.state.meal.strMeal : ''}`}</h1>
+                  </div>
+                </div>
+              </div>
+              <div className="buttons">
+                <img onClick={this.getRandomItem} className="round-btn" src={require('../../assets/cross3.png')} alt="dislike button" />
+                <Link to={ `/dinder/${this.state.meal ? this.state.meal.idMeal : ''}`} >
+                  <img className="round-btn" src={require('../../assets/heart2.png')} alt="like button" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
       </>
     )
   }

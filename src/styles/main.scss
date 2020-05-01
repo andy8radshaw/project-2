@@ -98,9 +98,23 @@ margin-top: 12px;
   height: 10vh;
   padding: 0.5vh;
   background-color: white;
-  border: 1vh solid #d8d6d6;
+  border: 1vh solid #d1cfcf;
   border-radius: 100%;
-  box-shadow: 0 2px rgb(138, 137, 137);
+  box-shadow: 0 6px 5px rgb(138, 137, 137);
+  cursor: pointer;
+}
+
+.round-btn:hover {
+  border: 1vh solid #d6d4d4;
+  border-radius: 100%;
+  box-shadow: 0 6px 5px rgb(138, 137, 137);
+  cursor: pointer;
+}
+.round-btn:active {
+  border: 1vh solid #d6d4d4;
+  border-radius: 100%;
+  box-shadow:  0 1px rgb(138, 137, 137);
+  transform: translate(0px, 5px);
   cursor: pointer;
 }
 
@@ -142,6 +156,10 @@ margin-top: 12px;
       justify-content: space-between;
       width: 50%;
       margin: 0 auto;
+      .meal-title {
+        padding-bottom: 5px;
+        border-bottom: 1px solid grey;
+      }
       .buttons {
         display: flex;
         flex-direction: row;
@@ -167,12 +185,22 @@ margin-top: 12px;
   .DinderMatch {
     .top-section {
       flex-direction: column;
-      margin: 50px;
+      margin: 20px;
       .ingredients {
-        
+        margin: 10px 0 0 0;
         width: 100%;
+        padding: 0;
+        .meal-title {
+          margin: 10px 0;
+          padding-bottom: 5px;
+          border-bottom: 1px solid grey;
+        }
+        .meal-ingredients {
+          margin: 10px 0;
+        }
         .buttons {
-          
+          margin: 10px 0 ;
+          order:-1;
           width: 100%;
           
         }

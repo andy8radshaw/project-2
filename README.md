@@ -96,14 +96,16 @@ nav bar:
 - burger location DONE
 
 home:
-- home page start button 
+- home page start button DONE
 
 random:
 - style polaroid
-  - font
+  - font - montserrat
   - layered pictures fx
   - onload, hover and press buttons animation
   - polaroid swipe animation
 
 match page:
 - styling
+
+

@@ -75,13 +75,12 @@ class DinderMatch extends React.Component {
                   <h2 className="subtitle">{strArea}</h2>
                 </div>
                 <div className="meal-ingredients">
-                  <p>Ingredients:</p>
+                  <p className="subtitle">Ingredients:</p>
                   {ingredientsList.map((ingredient, i) => (
                     <p key={i}>{ingredient}</p>
                   ))}
                 </div>
                 <div className="buttons">
-
                   <Link to={'/dinder'}>
                     <img className="round-btn" src={require('../../assets/cross3.png')} alt="dislike button" />
                   </Link>
