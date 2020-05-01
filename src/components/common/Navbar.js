@@ -34,10 +34,8 @@ class Navbar extends React.Component {
                 <p>If you have a main ingredient you want to use, or just have something in the fridge you want to use up, click the button below</p>
                 <hr />
                 <form>
-                  <div className="field">
-                    <Link to={`${ window.location.href === 'http://localhost:3000/dinder/ingredient' ? '' : '/dinder/ingredient' }`}
-                      className="button is-fullwidth is-danger"
-                    >USE MY INGREDIENT UP!</Link>
+                  <div className="field" onClick={`${ window.location.href === 'http://localhost:3000/dinder/ingredient' ? this.refreshPage : '' }`}>
+                    <Link to='/dinder/ingredient' className="button is-fullwidth is-danger">USE MY INGREDIENT UP!</Link>
                   </div>
                 </form>
               </div>

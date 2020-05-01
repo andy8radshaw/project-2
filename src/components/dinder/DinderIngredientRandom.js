@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import Navbar from '../common/Navbar'
-import { getMealWithIngredient, getMealById } from '../../lib/api'
+import { getMealWithIngredient } from '../../lib/api'
 
 class DinderIngredientRandom extends React.Component {
   state = {
@@ -37,11 +37,17 @@ class DinderIngredientRandom extends React.Component {
 
   getRandomItem = () => {
     const mealsArray = { ...this.state.mealsArray.data }
-    // const usedMeals = { ...this.state.usedMeals }
-    const randomNumber = Math.floor(Math.random() * mealsArray.meals.length)
-    console.log(mealsArray.meals[randomNumber])
+    if (mealsArray.meals === null) {
+      this.props.history.push('/notfound')
+    } else {
 
-    this.setState({ meal: mealsArray.meals[randomNumber], gotRandom: true })
+      // const usedMeals = { ...this.state.usedMeals }
+  
+      const randomNumber = Math.floor(Math.random() * mealsArray.meals.length)
+      console.log(mealsArray.meals[randomNumber])
+  
+      this.setState({ meal: mealsArray.meals[randomNumber], gotRandom: true })
+    }
   }
 
 
