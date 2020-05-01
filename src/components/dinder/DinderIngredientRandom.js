@@ -1,17 +1,20 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
-import { getMealWithIngredient } from '../../lib/api'
 import Navbar from '../common/Navbar'
+import { getMealWithIngredient } from '../../lib/api'
 
 class DinderIngredientRandom extends React.Component {
-  state = { 
-    meals: null
+  state = {
+    meal: null,
+    activeModal1: true,
+    mealsArray: [],
+    usedIndex: []
   }
 
   getData = async () => {
     try {
-      
+
       // this.setState({ meals: res.data })
     } catch (err) {
       console.log(err)
@@ -22,39 +25,68 @@ class DinderIngredientRandom extends React.Component {
     this.getData()
   }
 
- 
+  handleToggle = () => {
+    this.setState({ activeModal1: !this.state.activeModal1 })
+  }
+
+  handleChange = event => {
+    const ingredient = { ...this.state.ingredient, ingredient: event.target.value }
+    this.setState({ ingredient })
+  }
+
+  handleSubmit = async event => {
+    event.preventDefault()
+    
+    const ingredient = this.state.ingredient
+    try {
+      const mealArray = await getMealWithIngredient(ingredient)
+      // console.log(mealArray)
+      this.setState({ mealArray, activeModal1: false })
+      // this.props.history.push('/dinder/ingredient')
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+
 
 
   render() {
-    if (!this.state.meals) return null
-    const { idMeal, strMealThumb, strMeal, strArea } = this.state.meals.meals[0]
+    // if (!this.state.meals) return null
+    console.log(this.state.mealArray)
+    
 
     return (
       <>
         <Navbar />
-        <section className="DinderRandom section">
-          <div className="container">
-            <div className="columns">
-              <div className="column is-half box">
-                <div className="polaroid">
-                  <figure className="image">
-                    <img src={strMealThumb} alt={strMeal} />
-                  </figure>
-                  <div className="content">
-                    <h1>{strMeal}</h1>
-                    <h3>{strArea}</h3>
+        <div className={`modal ${this.state.activeModal1 ? 'is-active' : ''}`}>
+          <div onClick={this.handleToggle} className="modal-background"></div>
+          <div className="modal-content">
+            <div className="box">
+              <div>
+                <h1>Main Ingredient:</h1>
+                <p>If you have a main ingredient you want to use, or just have something in the fridge you want to use up, add it below and we will only send you meals that will help you use it up!</p>
+                <hr />
+                <form onSubmit={this.handleSubmit}>
+                  <div className="field">
+                    <div className="control">
+                      <input
+                        className="input"
+                        placeholder="Your Ingredient..."
+                        name="ingredient"
+                        onChange={this.handleChange}
+                      />
+                    </div>
                   </div>
-                </div>
-              </div>
-              <div className="buttons">
-                <img className="round-btn" onClick={this.getData} src={require('../../assets/cross3.png')} alt="like button" />
-                <Link to={`/dinder/${idMeal}`}>
-                  <img className="round-btn" src={require('../../assets/heart2.png')} alt="like button" />
-                </Link>
+                  <div className="field">
+                    <button className="button is-fullwidth is-danger">USE MY INGREDIENT UP!</button>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+        <h1>test</h1>
       </>
     )
   }

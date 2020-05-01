@@ -32,7 +32,7 @@ class DinderRandom extends React.Component {
     return (
       <>
         <Navbar />
-        <section className="DinderRandom section">
+        <section className="DinderRandom is-fullheight-with-navbar section">
           <div className="container">
             <div className="columns">
               <div className="column is-half box">

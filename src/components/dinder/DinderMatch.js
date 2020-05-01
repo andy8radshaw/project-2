@@ -46,7 +46,7 @@ class DinderMatch extends React.Component {
         }
         if (key[0].search('Measure') > 0 && key[1]) {
           measures.push(`${key[1]}`)
-        }
+        } 
       })
       for (let i = 0; i < ingredients.length - 1; i++) {
         if (ingredients[i]) {
@@ -61,7 +61,7 @@ class DinderMatch extends React.Component {
     return (
       <>
         <Navbar />
-        <section className="DinderMatch section">
+        <section className="DinderMatch is-fullheight-with-navbar section">
           <div className="container">
             <section className="top-section">
               <div className="image-container">
