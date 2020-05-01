@@ -84,7 +84,7 @@ class DinderMatch extends React.Component {
                   <Link to={'/dinder'}>
                     <img className="round-btn" src={require('../../assets/cross3.png')} alt="dislike button" />
                   </Link>
-                  <img className="round-btn" src={require('../../assets/heart2.png')} alt="like button" />
+                  <img className="round-btn" src={require('../../assets/favouriteBtn.png')} alt="like button" />
                 </div>
               </div>
             </section>

@@ -103,6 +103,30 @@ margin-top: 12px;
   box-shadow: 0 6px 5px rgb(138, 137, 137);
   cursor: pointer;
 }
+// .like {
+// }
+// .dislike {
+//   animation: fly-in-left 0.3s 1 0s linear;
+// }
+
+// @keyframes fly-in-left{
+//   0%{
+//       transform: rotate(0) translateX(-10vw) translateY(10vh);
+//       }
+//   29%{
+//       transform: rotate(0) translateX(-7vw) translateY(5vh);
+//       }
+//   62%{
+//       transform: rotate(0) translateX(-4vw) translateY(3vh);
+//       }
+//   100%{
+//       transform: rotate(0) translateX(0) translateY(0);
+//       }
+// }
+
+.elementToAnimate{
+  animation: yourAnimation 0.3s 1 0s linear;
+}
 
 .round-btn:hover {
   border: 1vh solid #d6d4d4;
