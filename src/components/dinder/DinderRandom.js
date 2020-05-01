@@ -47,9 +47,9 @@ class DinderRandom extends React.Component {
                 </div>
               </div>
               <div className="buttons">
-                <img className="round-btn dislike" onClick={this.getData} src={require('../../assets/cross3.png')} alt="dislike button" />
+                <img className={`${ window.location.href === 'http://localhost:3000/dinder' ? 'round-btn dislike' : 'round-btn' }`} onClick={this.getData} src={require('../../assets/cross3.png')} alt="dislike button" />
                 <Link to={`/dinder/${idMeal}`}>
-                  <img className="round-btn like" src={require('../../assets/heart2.png')} alt="like button" />
+                  <img className={`${ window.location.href === 'http://localhost:3000/dinder' ? 'round-btn like' : 'round-btn' }`} src={require('../../assets/heart2.png')} alt="like button" />
                 </Link>
               </div>
             </div>
