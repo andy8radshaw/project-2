@@ -13,19 +13,6 @@ class DinderIngredientRandom extends React.Component {
     gotRandom: false
   }
 
-  // getData = async () => {
-  //   try {
-  //     const res = await getMealById(this.state.meal.idMeal)
-  //     this.setState({ mealToDisplay: res.data })
-  //   } catch (err) {
-  //     console.log(err)
-  //   }
-  // }
-
-  // componentDidMount() {
-  //   this.getData()
-  // }
-
   handleToggle = () => {
     this.setState({ activeModal1: !this.state.activeModal1 })
   }

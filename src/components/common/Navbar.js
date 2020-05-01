@@ -12,6 +12,10 @@ class Navbar extends React.Component {
     this.setState({ activeModal: !this.state.activeModal })
   }
 
+  refreshPage = () => {
+    window.location.reload()
+  }
+
   render() {
     return (
 
@@ -31,7 +35,9 @@ class Navbar extends React.Component {
                 <hr />
                 <form>
                   <div className="field">
-                    <Link to="/dinder/ingredient" className="button is-fullwidth is-danger">USE MY INGREDIENT UP!</Link>
+                    <Link to={`${ window.location.href === 'http://localhost:3000/dinder/ingredient' ? '' : '/dinder/ingredient' }`}
+                      className="button is-fullwidth is-danger"
+                    >USE MY INGREDIENT UP!</Link>
                   </div>
                 </form>
               </div>
