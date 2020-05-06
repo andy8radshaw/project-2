@@ -1,10 +1,10 @@
 import axios from 'axios'
 
-const baseUrl = 'https://www.themealdb.com/api/json/v1/1'
+const baseUrl = `https://www.themealdb.com/api/json/v1/${process.env.REACT_APP_MY_SECRET_KEY}`
 
-const baseUrlAddId = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i='
+const baseUrlAddId = `https://www.themealdb.com/api/json/v1/${process.env.REACT_APP_MY_SECRET_KEY}/lookup.php?i=`
 
-const baseUrlAddIngredient = 'https://www.themealdb.com/api/json/v1/1/filter.php?i='
+const baseUrlAddIngredient = `https://www.themealdb.com/api/json/v1/${process.env.REACT_APP_MY_SECRET_KEY}/filter.php?i=`
 
 export const getRandomMeal = () => {
   return axios.get(`${baseUrl}/random.php`)

@@ -13,7 +13,11 @@ class Navbar extends React.Component {
   }
 
   refreshPage = () => {
-    window.location.reload()
+    if (window.location.href === 'http://localhost:3000/dinder/ingredient') { 
+      window.location.reload()
+    } else {
+      return
+    } 
   }
 
   render() {
@@ -34,7 +38,7 @@ class Navbar extends React.Component {
                 <p>If you have a main ingredient you want to use, or just have something in the fridge you want to use up, click the button below</p>
                 <hr />
                 <form>
-                  <div className="field" onClick={`${ window.location.href === 'http://localhost:3000/dinder/ingredient' ? this.refreshPage : '' }`}>
+                  <div className="field" onClick= {this.refreshPage}>
                     <Link to='/dinder/ingredient' className="button is-fullwidth is-danger">USE MY INGREDIENT UP!</Link>
                   </div>
                 </form>
