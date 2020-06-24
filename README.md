@@ -1,4 +1,44 @@
-# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) GA London React Template
+# SEI Project Two - Dinder
+
+### Table of contents 
+- Project Overview
+- The Brief
+- Technologies Used
+- Approach Taken - (screenshots and featured code)
+- Wins & Blockers
+- Bugs
+- Future Content and Improvements
+- Original Planning Notes
+
+---
+
+# Overview
+Overview here
+
+
+# The Brief
+Brief here
+
+# Technologies Used
+- list of technologies used here
+
+# Approach Taken
+breakdown of approcah taken on this project
+
+# Wins & Blockers
+### **Wins:**
+Wins here
+### **Blockers:**
+Blockers here
+
+# Bugs
+- list of bugs
+
+# Future Content & Improvements
+- list of future content
+
+
+
 
 # ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project #2: Reacathon
 
