@@ -40,18 +40,11 @@ class DinderIngredientRandom extends React.Component {
     if (mealsArray.meals === null) {
       this.props.history.push('/notfound')
     } else {
-
-      // const usedMeals = { ...this.state.usedMeals }
-  
       const randomNumber = Math.floor(Math.random() * mealsArray.meals.length)
-      console.log(mealsArray.meals[randomNumber])
-  
+      // console.log(mealsArray.meals[randomNumber])
       this.setState({ meal: mealsArray.meals[randomNumber], gotRandom: true })
     }
   }
-
-
-
 
 
   render() {
