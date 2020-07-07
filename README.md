@@ -8,6 +8,7 @@
 - Wins & Blockers
 - Bugs
 - Future Content and Improvements
+- Key Learnings
 - Original Planning Notes
 
 ---
@@ -27,11 +28,11 @@ Dinder is a parody of the dating app Tinder. Only, instead of finding an actual 
 ![](src/assets/screenshots/dinder-logo.png)
 
 # The Brief
-* **Consume a public API** – this could be anything but it must make sense for your project.
-* **Have several components** - At least one classical and one functional.
-* **The app can have a router** - with several "pages", this is up to your disgression and if it makes sense for your project.
-* **Include wireframes** - that you designed before building the app.
-* **Be deployed online** and accessible to the public.
+* **Consume a public API** – this could be anything but it must make sense for your project
+* **Have several components** - At least one classical and one functional
+* **The app can have a router** - with several "pages", this is up to your disgression and if it makes sense for your project
+* **Include wireframes** - that you designed before building the app
+* **Be deployed online** and accessible to the public
 
 # Technologies Used
 
@@ -65,7 +66,7 @@ Because this project's deadline was less than 48 hours after being given the bri
 This API allowed us to:
 - GET a random recipe from the full database
 - GET a selected recipe based on its ID
-- GET a random recipe based on an ingredient that a user had inputted.
+- GET a random recipe based on an ingredient that a user had inputted
 
 This then lead us to think of creating a parody app based on Tinder. From here we were then able to create a storyboard and wireframe for the app using Figma. 
 
@@ -177,6 +178,9 @@ Ingredient Search results:
 - Swipeable actions and styling to get a more realistic 'Tinder' experience
 - Categories for different meals (breakfast, lunch, dinner etc.)
 - Fix all above bugs!
+
+# Key Learnings
+This was my first project working in a pair and I feel that I definitely learnt a lot from this experience. It felt very positive having someone else working towards the same goal and solving problems together. I also felt that the process of pair coding really meant that I had to think more about the way I am doing things, in terms of sudo-coding through problems and getting them down in code. It really helped me take a step back from just throwing things into the code and into having to work things out in a step by step manner beforehand.
 
 ---
 ---
